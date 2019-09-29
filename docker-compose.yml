@@ -8,19 +8,25 @@ services:
       context: .
       dockerfile: /Dockerfile
     image: "sanic_board"
+    depends_on:
+      - "postgres"
     restart: unless-stopped
     ports:
-      - "8000:5432"
+      - "8000"
     networks:
       - default
   postgres:
     container_name: postgres
     environment:
       - SERVICE_NAME=postgres
-      - POSTGRES_PASSWORD=example
+      - POSTGRES_PASSWORD=docker
     build:
       context: .
       dockerfile: postgres/Dockerfile
+    volumes:
+      - /etc/postgresql
+      - /var/log/postgresql
+      - /var/lib/postgresql
     image: "postgres"
     restart: unless-stopped
     ports:
