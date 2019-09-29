@@ -1,8 +1,7 @@
 Документация к API приложения SanicBoard v1.0
 
 # -----------------------------------------------------C R E A T E------------------------------------------------------
-@app.route("/add_category", methods=['POST'])
-async def add_category(request) -> json:
+POST /add_category
     """
     Позволяет создать категорию.
     :body title - заголовок (mandatory)
