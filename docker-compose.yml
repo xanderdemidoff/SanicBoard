@@ -1,0 +1,29 @@
+version: '2.0'
+services:
+  sanic_board:
+    container_name: sanic_board
+    environment:
+      - SERVICE_NAME=sanic_board
+    build:
+      context: .
+      dockerfile: /Dockerfile
+    image: "sanic_board"
+    restart: unless-stopped
+    ports:
+      - "8000:5432"
+    networks:
+      - default
+  postgres:
+    container_name: postgres
+    environment:
+      - SERVICE_NAME=postgres
+      - POSTGRES_PASSWORD=example
+    build:
+      context: .
+      dockerfile: postgres/Dockerfile
+    image: "postgres"
+    restart: unless-stopped
+    ports:
+      - "5432"
+    networks:
+      - default
