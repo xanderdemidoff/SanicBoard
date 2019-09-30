@@ -2,7 +2,7 @@
 Just a simple forum-API based on Sanic framework
 
 # Project stack:
-- Python3 (3.6 or more)
+- Python3.7
 - Sanic framework
 - PostgreSQL Database
 - SQLAlchemy ORM
