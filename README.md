@@ -1,6 +1,13 @@
 # SanicBoard
 Just a simple forum-API based on Sanic framework
 
+# Project stack:
+- Python3
+- Sanic framework
+- PostgreSQL Database
+- SQLAlchemy ORM
+- Docker compose
+
 # How to run:
 1. Setup Docker (https://docs.docker.com/get-started/)
 2. Navigate to root directory of project (/SanicBoard)
