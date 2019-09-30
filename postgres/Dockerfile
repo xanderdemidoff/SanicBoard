@@ -5,8 +5,6 @@ USER postgres
 
 # Create a PostgreSQL role named ``docker`` with ``docker`` as the password and
 # then create a database `docker` owned by the ``docker`` role.
-# Note: here we use ``&&\`` to run commands one after the other - the ``\``
-#       allows the RUN command to span multiple lines.
 RUN pg_createcluster 12 main \
     && /etc/init.d/postgresql start \
     && psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" \

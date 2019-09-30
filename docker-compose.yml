@@ -6,7 +6,7 @@ services:
       - SERVICE_NAME=sanic_board
     build:
       context: .
-      dockerfile: /Dockerfile
+      dockerfile: app/Dockerfile
     image: "sanic_board"
     depends_on:
       - "postgres"
